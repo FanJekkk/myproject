@@ -1,0 +1,39 @@
+.first {
+    background: url(/img/fon4.jpg) no-repeat;
+    -moz-background-size: cover; /* Firefox 3.6+ */
+    -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: cover; /* Opera 9.6+ */
+    background-size: cover; /* Современные браузеры */
+    height: 110vh;
+}
+
+.navigation {
+    background-color: rgba(255, 255, 255, 0);
+    font-family: 'Play', sans-serif;
+    font-size: 18px;
+    color: #fff;
+}
+
+.navbar a{
+    color: #fff;
+}
+
+h1 {
+    margin-top: 100px;
+    font-family: 'Play', sans-serif;
+    border: 2px solid white;
+}
+
+.new {
+    font-family: 'Play', sans-serif;
+    font-size: 20px;
+}
+
+.regi {
+    background: url(/img/fon4.jpg) no-repeat;
+    -moz-background-size: cover; /* Firefox 3.6+ */
+    -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: cover; /* Opera 9.6+ */
+    background-size: cover;
+    color: white;
+}

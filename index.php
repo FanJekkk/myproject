@@ -37,66 +37,73 @@ if (!empty($_SESSION['auth'])) {
     </section>
     <?php
 } else {
-    ?>
-    <nav class="navigation navbar navbar-expand-lg navbar-dark text-white fixed-top">
-        <a class="navbar-brand" href="#">Blog</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+?>
+<nav class="navigation navbar navbar-expand-lg navbar-dark text-white fixed-top">
+    <a class="navbar-brand" href="#">Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Главная<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#news">Новости</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contacts">Контакты</a>
-                </li>
-            </ul>
-            <form action="registration.php">
-                <input type="submit" class="btn btn-outline-light my-sm-0" value="Зарегистрироваться">
-            </form>
-            <form action="login.php">
-                <input type="submit" class="btn btn-outline-light my-sm-0" value="Войти">
-            </form>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Главная<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#news">Новости</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contacts">Контакты</a>
+            </li>
+        </ul>
+        <form action="registration.php">
+            <input type="submit" class="btn btn-outline-light my-sm-0" value="Зарегистрироваться">
+        </form>
+        <form action="login.php">
+            <input type="submit" class="btn btn-outline-light my-sm-0" value="Войти">
+        </form>
+    </div>
+</nav>
+<section class="first">
+    <div class="container">
+        <div class="row h-100 justify-content-center align-items-center">
+            <h1 class="mx-auto text-white">Blog by Denis Teplyakov</h1>
         </div>
-    </nav>
-    <section class="first">
-        <div class="container">
-            <div class="row h-100 justify-content-center align-items-center">
-                <h1 class="mx-auto text-white">Blog by Denis Teplyakov</h1>
+    </div>
+</section>
+<section id="main2">
+    <div class="container text-center">
+        <h1>Новости</h1>
+        <div class="row text-center">
+            <a name="news" class="new mx-auto">
+                <div class="col"><img src="https://img.icons8.com/ios/50/000000/topic.png"></div>
+                <div class="col"><?php echo $_GET["comment"] ?></div>
+            </a>
+        </div>
+    </div>
+</section>
+<section id="postadd">
+    <div class="container text-center">
+        <form class="post mx-auto" name="post1" method="get" action="index.php">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Что расскажете?)</label>
+                <input type="text" name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"/>
             </div>
-        </div>
-    </section>
-    <section id="main2">
-        <div class="container text-center">
-            <h1>Новости</h1>
-            <div class="row text-center">
-                <a name="news" class="new mx-auto">
-                    <div class="col"><img src="https://img.icons8.com/ios/50/000000/topic.png"></div>
-                    <div class="col"><?php echo $_GET["comment"] ?></div>
-                </a>
-            </div>
-        </div>
-    </section>
-    <section id="postadd">
-        <div class="container text-center">
-            <form class="post mx-auto" name="post1" method="get" action="index.php">
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Что расскажете?)</label>
-                    <input type="text" name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"/>
-                </div>
-                <button type="submit" class="btn btn-primary">Добавить</button>
-            </form>
-        </div>
-    </section>
-    <footer>
-        <a name="contacts"></a>
-    </footer>
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </form>
+    </div>
+</section>
+<section id="top2">
+    <div class="container text-center">
+        <div class="row text-center">Мои проекты</div>
+    </div>
+
+</section>
+</body>
+<footer>
+    <a name="contacts"></a>
+</footer>
 <?php }
 if (isset($_POST['exit1']))
     session_destroy(); ?>

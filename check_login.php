@@ -6,8 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include("functions/functions.php");
     $_SESSION['login'] = $_POST['login'];
     $_SESSION['pass'] = md5($_POST['pass']);
-    $login = clear_string($_POST['login']);
-    $pass = clear_string(md5($_POST['pass']));
+    $login = mysqli_real_escape_string($link, clear_string($_POST['login']));
+    $pass = mysqli_real_escape_string($link, md5($_POST['pass']));
     $result = mysqli_query($link, "SELECT * FROM users WHERE pass = '$pass' and login = '$login'");
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
